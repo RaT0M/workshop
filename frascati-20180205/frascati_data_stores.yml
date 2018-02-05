@@ -21,3 +21,58 @@ DataStores:
       parameters:
         path_to_json_file: '/home/multiply-user/framework/workshop/frascati-20180205/frascati_veg_priors_meta_info.json'
     Id: 'FrascatiVegetationPriors'
+  - DataStore:
+    FileSystem:
+      type: LocalFileSystem
+      parameters:
+        path: '/Data/MODIS/h21v09'
+        pattern: '/dt/'
+    MetaInfoProvider:
+      type: JsonMetaInfoProvider
+      parameters:
+        path_to_json_file: '/home/t_fincke/mcd43a1_meta_info.json'
+    Id: 'MODIS_A1'
+  - DataStore:
+    FileSystem:
+      type: LocalFileSystem
+      parameters:
+        path: '/Data/MODIS/h21v09'
+        pattern: '/dt/'
+    MetaInfoProvider:
+      type: JsonMetaInfoProvider
+      parameters:
+        path_to_json_file: '/home/t_fincke/mcd43a2_meta_info.json'
+    Id: 'MODIS_A2'
+  - DataStore:
+    FileSystem:
+      type: LocalFileSystem
+      parameters:
+        path: '/Data/S2_L2/30/S/WJ'
+        pattern: '/yy/mm/dd/'
+    MetaInfoProvider:
+      type: JsonMetaInfoProvider
+      parameters:
+        path_to_json_file: '/home/t_fincke/s2_l2_meta_info.json'
+    Id: 'S2_L2_30_SWJ'
+  - DataStore:
+    FileSystem:
+      type: LocalFileSystem
+      parameters:
+        path: '/Data/S2_L2/32/U/PU'
+        pattern: '/yy/mm/dd/'
+    MetaInfoProvider:
+      type: JsonMetaInfoProvider
+      parameters:
+        path_to_json_file: '/home/t_fincke/s2_l2_meta_info.json'
+    Id: 'S2_L2_32_UPU'
+  - DataStore:
+    FileSystem:
+      type: LocalFileSystem
+      parameters:
+        path: '/Data/Tom_temp'
+        pattern: '/dt/'
+    MetaInfoProvider:
+      type: JsonMetaInfoProvider
+      parameters:
+        path_to_json_file: '/home/t_fincke/s1_grd_meta_info.json'
+    Id: 'S1_GRD'
