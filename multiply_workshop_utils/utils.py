@@ -73,6 +73,22 @@ def _get_prior_config(priors_sm_dir: str, priors_veg_dir: str) -> dict:
     general_prior_directory = priors_veg_dir
     prior_general_dict = {}
     prior_general_dict['directory_data'] = general_prior_directory
+    
+    prior_sm_dict = {}
+    if len(priors_sm_dir) > 1:
+        if type(priors_sm_dir) is dict:
+            for k in priors_sm_dir.keys():
+                prior_sm_dict.update({str(k): {str(k)+'_dir': priors_sm_dir[k]}})
+        elif type(priors_sm_dir) is list:
+        #    for i, path in enumerate (priors_sm_dir):
+        #        prior_sm_dict.update({str(i)+'_dir':path})
+            print('please provide a dictionar wih dicts "climatology", "munich"')
+        else:
+            prior_sm_climatology_directory = priors_sm_dir
+            prior_sm_climatology_dict = {}
+            prior_sm_climatology_dict['climatology_dir'] = prior_sm_climatology_directory
+            prior_sm_dict['climatology'] = prior_sm_climatology_dict
+            
     prior_sm_climatology_directory = priors_sm_dir
     prior_sm_climatology_dict = {}
     prior_sm_climatology_dict['climatology_dir'] = prior_sm_climatology_directory
